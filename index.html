@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="map.js"></script>
+  <title>UB SAFE</title>
+  <style>
+		
+		body {
+			background-image: url('https://upload.wikimedia.org/wikipedia/en/6/63/Aerial_photo_of_Buffalo%2C_NY_Skyline.jpg');
+		}
+		h1 {
+			font-family: Times New Roman;
+			font-weight: bold;
+		}
+    #map {
+      height: 853px;
+      margin: auto;
+    }
+    .container {
+      width: 600px;
+      height: 300px;
+      overflow: auto;
+    }
+    
+  </style>
+</head>
+
+<body onload="loadMap(); loadChart(); loadRatings();">
+
+<div class="w3-container w3-center">
+	<h1>UB SAFE</h1>
+	<p>This app aims to help prospective <strong>UB students</strong> choose a <strong>safe</strong> location to 
+    live when relocating to <strong>Buffalo</strong>. <br>It accomplishes this task by providing them with 
+    the city's <strong>criminal activity</strong>, as well as <strong>neighborhood safety ratings</strong> provided by 
+    current residents.</p>
+
+<div class="w3-row w3-container">
+	<div class="w3-col s6 w3-white w3-center">
+		<h2>Buffalo Crime Activity</h2>
+		<p>This map indicates the location and crime type of recent crimes committed in Buffalo, NY.
+		<div id="map"></div>
+    </div>
+    <div class="w3-col s6 w3-white w3-center">
+		<h2>Crime Analysis</h2>
+		<div id="chart"></div>
+		
+    <br>
+	  
+    <p>Please choose your neighborhood, and rate it based on how safe you feel on a day to day basis.</p>
+		<div class="container mt-5">
+			<form action="/handle_ratings" method="post"> 
+			<div class="form-group">
+				<select id="area-select" class="form-control custom-select" name="neighborhood">
+					<option value="0" selected>Select Neighborhood</option>
+					<option value="allentown">Allentown</option>
+					<option value="black_rock">Black Rock</option>
+					<option value="bailey_lovejoy">Bailey-Lovejoy</option>
+					<option value="central_park">Central Park</option>
+					<option value="cold_springs">Cold Springs</option>
+					<option value="delaware_district">Delaware District</option>
+					<option value="downtown">Downtown</option>
+					<option value="east_side">East Side</option>
+					<option value="elmwood_strip">Elmwood Strip</option>
+					<option value="fillmore_leory">Fillmore-Leory</option>
+					<option value="first_ward">First Ward</option>
+					<option value="fruit_belt">Fruit Belt</option>
+					<option value="hamlin_park">Hamlin Park</option>
+					<option value="hospital_hill">Hospital Hill</option>
+					<option value="humboldt_park">Humboldt Park</option>
+					<option value="kaisertown">Kaisertown</option>
+					<option value="kensington">Kensington</option>
+					<option value="kensington_heights">Kensington Heights</option>
+					<option value="lower_west_side">Lower West Side</option>
+					<option value="masten_park">Masten Park</option>
+					<option value="north_buffalo">North Buffalo</option>
+					<option value="north_park">North Park</option>
+					<option value="parkside">Parkside</option>
+					<option value="polonia">Polonia</option>
+					<option value="riverside">Riverside</option>
+					<option value="schiller_park">Schiller Park</option>
+					<option value="south_buffalo">South Buffalo</option>
+					<option value="university_district">University District</option>
+					<option value="university_heights">University Heights</option>
+					<option value="vernon_triangle">Vernon Triangle</option>
+					<option value="west_side">West Side</option>
+					<option value="willert_park">Willert Park</option>
+				</select>
+			</div>
+ 
+			<div class="form-group">
+				<input name="numberRating" type="number" id="rating-control" class="form-control" step="0.5" max="5" placeholder="Rate 1 - 5">
+			</div>
+	  
+			<button type="submit" class="btn btn-primary">Submit</button>
+			
+			</form>
+		
+      <br>
+			
+			<form action="/get_ratings" method="get">
+			<button type="submit" class="btn btn-secondary">View Neighborhood Data</button>
+			</form>
+		</div>
+	</div>
+</div>
+</div>  
+    
+</body>
+</html>

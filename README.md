@@ -1,8 +1,5 @@
 # UBSafe
-Computer Science 1 - Project
 
-This is a web application that I built for my first computer science class in University. It uses a crime api from the city of Buffalo to showcase the criminal activity as it continues to occur in recent time. The app has the ability to collect additional data from neighborhood residents via an online survey.
+This is a web application that I built for my first coding project. It uses a crime api from the city of Buffalo to showcase the criminal activity as it continues to occur in recent time. The app has the ability to collect additional data from neighborhood residents via an online survey.
 
-To use this app, download files and open terminal. 
-
-Launch using Python and Flask.
+This project utilizes JavaScript, Python, HTML, CSS, and Flask to achieve it's task.

@@ -1,6 +1,6 @@
 # UBSafe
 
-Collects data from a crime api for the city of Buffalo to showcase the criminal activity as it continues to occur in recent time. The app has the ability to collect additional data from neighborhood residents via a survey.
+Implemented data from a crime api to produce a visual representation of local criminal activity. The app also collects additional data from neighborhood residents via a survey.
 
 Utilized: JavaScript, Python, HTML, CSS, and Flask.
 
